@@ -34,6 +34,36 @@ def get_range(msg):
         "Выберите, какой тип героя для вас больше подходит",
         reply_markup=markup
     )
+    bot.register_next_step_handler(msg, choice_hero, position)
+
+
+def choice_hero(msg, position):
+    from json import load
+    from random import choice
+    type_ = "melee" if msg.text == "Ближний бой" else "range"
+
+    with open("heroes.json", "r") as file:
+        heroes = load(file)
+        hero = choice(heroes[type_][position])
+        bot.send_message(msg.chat.id, "Думаю, вам стоит выбрать " + hero["name"])
+        bot.send_message(msg.chat.id, "Вот подробные инструкции по игре на этом персонаже")
+
+        with open("descriptions/" + hero["description"], "r") as desc_file:
+            description = desc_file.read()
+            
+            for text in telebot.util.split_string(description, 3000):
+                bot.send_message(msg.chat.id, text)
+
+    markup = types.InlineKeyboardMarkup()
+    markup.add(types.InlineKeyboardButton("Выбрать другого героя", callback_data="new"))
+    bot.send_message(msg.chat.id, "Удачной игры!", reply_markup=markup)
+
+
+@bot.callback_query_handler
+def handle_new_attempt(call):
+    if call.data == "new":
+        send_menu(call.message)
+
 
 
 
