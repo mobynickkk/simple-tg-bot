@@ -47,13 +47,16 @@ def choice_hero(msg, position):
         hero = choice(heroes[type_][position])
         markup = types.ReplyKeyboardRemove(selective=False)
         bot.send_message(msg.chat.id, "Думаю, вам стоит выбрать " + hero["name"], reply_markup=markup)
-        bot.send_message(msg.chat.id, "Вот подробные инструкции по игре на этом персонаже")
 
-        with open("descriptions/" + hero["description"], "r", encoding="utf-8") as desc_file:
-            description = desc_file.read()
-            
-            for text in telebot.util.split_string(description, 3000):
-                bot.send_message(msg.chat.id, text)
+        try:
+            bot.send_message(msg.chat.id, "Вот подробные инструкции по игре на этом персонаже")
+            with open("descriptions/" + hero["description"], "r", encoding="utf-8") as desc_file:
+                description = desc_file.read()
+                
+                for text in telebot.util.split_string(description, 3000):
+                    bot.send_message(msg.chat.id, text)
+        except:
+            bot.send_message(msg.chat.id, "Для данного персонажа пока нет инструкций")
 
     markup = types.InlineKeyboardMarkup()
     markup.add(types.InlineKeyboardButton("Выбрать другого героя", callback_data="new"))
