@@ -8,11 +8,11 @@ bot = telebot.TeleBot('1266560701:AAGq4ANITk06EVip5uUrlF5g1KP2OTo5xhE')
 def send_menu(msg):
     markup = types.ReplyKeyboardMarkup(row_width=5)
     markup.add(
-        types.KeyboardButton("1", callback_data="position_1"),
-        types.KeyboardButton("2", callback_data="position_2"),
-        types.KeyboardButton("3", callback_data="position_3"),
-        types.KeyboardButton("4", callback_data="position_4"),
-        types.KeyboardButton("5", callback_data="position_5")
+        types.KeyboardButton("1"),
+        types.KeyboardButton("2"),
+        types.KeyboardButton("3"),
+        types.KeyboardButton("4"),
+        types.KeyboardButton("5")
     )
     bot.send_message(
         msg.chat.id, 
