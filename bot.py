@@ -45,7 +45,8 @@ def choice_hero(msg, position):
     with open("heroes.json", "r") as file:
         heroes = load(file)
         hero = choice(heroes[type_][position])
-        bot.send_message(msg.chat.id, "Думаю, вам стоит выбрать " + hero["name"])
+        markup = types.ReplyKeyboardRemove(selective=False)
+        bot.send_message(msg.chat.id, "Думаю, вам стоит выбрать " + hero["name"], reply_markup=markup)
         bot.send_message(msg.chat.id, "Вот подробные инструкции по игре на этом персонаже")
 
         with open("descriptions/" + hero["description"], "r", encoding="utf-8") as desc_file:
