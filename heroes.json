@@ -1,0 +1,56 @@
+{
+    "melee": {
+        "1": [
+            {"name": "Anti-Mage", "attr": "agility", "description": "am.txt"},
+            {"name": "Wraith King", "attr": "strength", "description": "wk.txt"},
+            {"name": "Phantom Assasin", "attr": "agility", "description": "pa.txt"}
+        ],
+        "2": [
+            {"name": "Alchemist", "attr": "strength", "description": "alch.txt"},
+            {"name": "Ember Spirit", "attr": "agility", "description": "em.txt"},
+            {"name": "Kunkka", "attr": "strength", "description": "ku.txt"}
+        ],
+        "3": [
+            {"name": "Bristleback", "attr": "strength", "description": "bb.txt"},
+            {"name": "Tiny", "attr": "strength", "description": "tn.txt"},
+            {"name": "Slardar", "attr": "strength", "description": "sl.txt"}
+        ],
+        "4": [
+            {"name": "Pudge", "attr": "strength", "description": "pud.txt"},
+            {"name": "Undying", "attr": "strength", "description": "ud.txt"},
+            {"name": "Treant Protector", "attr": "strength", "description": "tp.txt"}
+        ],
+        "5": [
+            {"name": "Omniknight", "attr": "strength", "description": "ok.txt"},
+            {"name": "Ogre Magi", "attr": "intellect", "description": "om.txt"},
+            {"name": "Earthshaker", "attr": "strength", "description": "shake.txt"}
+        ]
+    },
+    "range": {
+        "1": [
+            {"name": "Sniper", "attr": "agility", "description": "snip.txt"},
+            {"name": "Meduza", "attr": "agility", "description": "duza.txt"},
+            {"name": "Drow Ranger", "attr": "agility", "description": "dr.txt"}
+        ],
+        "2": [
+            {"name": "Huskar", "attr": "strength", "description": "hus.txt"},
+            {"name": "Outworld Devourer", "attr": "intellect", "description": "od.txt"},
+            {"name": "Morphling", "attr": "agility", "description": "morph.txt"}
+        ],
+        "3": [
+            {"name": "Necrophos", "attr": "intellect", "description": "necr.txt"},
+            {"name": "Windranger", "attr": "intellect", "description": "wr.txt"},
+            {"name": "Visage", "attr": "intellect", "description": "vis.txt"}
+        ],
+        "4": [
+            {"name": "Phoenix", "attr": "strength", "description": "phoe.txt"},
+            {"name": "Zeus", "attr": "intellect", "description": "zeus.txt"},
+            {"name": "Warlock", "attr": "intellect", "description": "warl.txt"}
+        ],
+        "5": [
+            {"name": "Lion", "attr": "intellect", "description": "lion.txt"},
+            {"name": "Shadow Shaman", "attr": "intellect", "description": "sham.txt"},
+            {"name": "Bane", "attr": "intellect", "description": "bane.txt"}
+        ]
+    }
+}
