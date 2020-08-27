@@ -48,7 +48,7 @@ def choice_hero(msg, position):
         bot.send_message(msg.chat.id, "Думаю, вам стоит выбрать " + hero["name"])
         bot.send_message(msg.chat.id, "Вот подробные инструкции по игре на этом персонаже")
 
-        with open("descriptions/" + hero["description"], "r") as desc_file:
+        with open("descriptions/" + hero["description"], "r", encoding="utf-8") as desc_file:
             description = desc_file.read()
             
             for text in telebot.util.split_string(description, 3000):
@@ -59,15 +59,10 @@ def choice_hero(msg, position):
     bot.send_message(msg.chat.id, "Удачной игры!", reply_markup=markup)
 
 
-@bot.callback_query_handler
+@bot.callback_query_handler(func=lambda call: True)
 def handle_new_attempt(call):
     if call.data == "new":
         send_menu(call.message)
-
-
-
-
-
 
 
 if __name__ == "__main__":
