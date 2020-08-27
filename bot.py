@@ -18,7 +18,24 @@ def send_menu(msg):
         msg.chat.id, 
         "Выберите вашу позицию (1 - кери легкой линии, 2 - мидер, 3 - хардлайнер, 4 - семисаппорт, 5 - саппорт)",
         reply_markup=markup
-        )
+    )
+    bot.register_next_step_handler(msg, get_range)
+
+
+def get_range(msg):
+    position = msg.text
+    markup = types.ReplyKeyboardMarkup(row_width=2)
+    markup.add(
+        types.KeyboardButton("Ближний бой"),
+        types.KeyboardButton("Дальний бой")
+    )
+    bot.send_message(
+        msg.chat.id,
+        "Выберите, какой тип героя для вас больше подходит",
+        reply_markup=markup
+    )
+
+
 
 
 
